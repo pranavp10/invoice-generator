@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import CustomTextInput from "./ui/customTextInput";
-import CustomDateInput from "./ui/customDateinput";
+import CustomTextInput from "../ui/customTextInput";
+import CustomDateInput from "../ui/customDateinput";
 const InvoiceTerms = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
 

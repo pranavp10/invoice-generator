@@ -1,7 +1,7 @@
 "use client";
 import CustomTextInput from "@/app/component/ui/customTextInput";
-import CurrencyInput from "./ui/currencyInput";
-import useQueryParams from "../hooks/useQueryParams";
+import CurrencyInput from "../ui/currencyInput";
+import useQueryParams from "../../hooks/useQueryParams";
 import { currencyList } from "@/lib/currency";
 
 const InvoiceDetails = () => {

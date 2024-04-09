@@ -1,6 +1,6 @@
 "use client";
-import useQueryParams from "../hooks/useQueryParams";
-import StepButton from "./ui/stepButton";
+import useQueryParams from "../../hooks/useQueryParams";
+import StepButton from "../../component/ui/stepButton";
 
 const Steps = () => {
   const { value } = useQueryParams("step");
