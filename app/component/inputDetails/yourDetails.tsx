@@ -1,5 +1,6 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
+import ImageInput from "../ui/imageInput";
 
 const YourDetails = () => (
   <div className="pt-24">
@@ -14,10 +15,11 @@ const YourDetails = () => (
     </p>
     <p className="pb-2 text-sm font-medium text-neutral-500">Billing details</p>
     <CustomTextInput
-      label="Your name"
-      placeholder="Prolab Inc"
+      label="Your Name"
+      placeholder="Pranav"
       variableName="yourName"
     />
+    <ImageInput label="Logo" variableName="yourLogo" />
     <CustomTextInput
       label="Address"
       placeholder="Whitefield Circle,12"

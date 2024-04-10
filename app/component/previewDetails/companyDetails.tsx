@@ -18,7 +18,7 @@ export const CompanyDetails = () => {
   return (
     <div className="">
       <p className="text-[11px] text-neutral-400 font-semibold uppercase pb-3.5">
-        From
+        To
       </p>
       <div className="h-10 mb-3">
         {companyLogo ? (
@@ -31,7 +31,7 @@ export const CompanyDetails = () => {
           <div className="rounded-full bg-neutral-100 h-10 w-10 animate-pulse" />
         )}
       </div>
-      {companyAddress ? (
+      {companyName ? (
         <p className="text-2xl font-medium">{companyName}</p>
       ) : (
         <div className="rounded-md bg-neutral-100 h-5 w-5/6  animate-pulse mb-4" />

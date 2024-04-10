@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import PreviewDetails from "./components/previewDetails";
 import Steps from "./components/steps";
 import { InvoiceInputSteps } from "./components/invoiceInputSteps";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -9,10 +10,16 @@ const Page = () => {
       <div className="max-w-lg min-h-screen w-full h-full p-12 border-r flex flex-col justify-between">
         <div>
           <div className="flex gap-2 items-center">
-            <div className="w-10 h-10 bg-orange-500 rounded-lg" />
+            <Image
+              src="/android-chrome-512x512.png"
+              width={40}
+              height={40}
+              className="rounded-lg"
+              alt="logo"
+            />
             <div>
               <p className="font-semibold">Invoice Generator</p>
-              <p className="text-gray-500 text-sm">By Prolab</p>
+              <p className="text-orange-500 text-sm">By Prolab</p>
             </div>
           </div>
           <Suspense>

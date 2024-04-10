@@ -7,22 +7,27 @@ const PaymentDetails = () => (
     <CustomTextInput
       label="Bank name"
       placeholder="HSBC"
-      variableName="companyAddress"
+      variableName="bankName"
     />
     <CustomTextInput
-      label="Bank account number"
+      label="Account number"
       placeholder="8920804195"
-      variableName="companyCity"
+      variableName="accountNumber"
     />
     <CustomTextInput
-      label="Account holder name"
+      label="Account Name"
       placeholder="Pranav"
-      variableName="accountHolderName"
+      variableName="accountName"
     />
     <CustomTextInput
       label="IFSC code"
       placeholder="HSBC0560002"
       variableName="ifscCode"
+    />
+    <CustomTextInput
+      label="Routing number"
+      placeholder="0804189592"
+      variableName="routingCode"
     />
     <CustomNumberInput
       label="Swift code"
