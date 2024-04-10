@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontSize: {
-        xxs: '2.75rem'
+        xxs: '11px'
       },
       keyframes: {
         "accordion-down": {

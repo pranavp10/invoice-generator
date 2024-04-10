@@ -1,9 +1,11 @@
+"use client";
+
 import DownloadInvoice from "@/app/component/inputDetails/downloadInvoice";
 import InvoiceDetails from "@/app/component/inputDetails/invoiceDetails";
 import InvoiceTerms from "@/app/component/inputDetails/invoiceTerms";
 import PaymentDetails from "@/app/component/inputDetails/paymentDetails";
-import { CompanyDetails } from "@/app/component/previewDetails/companyDetails";
-import { YourDetails } from "@/app/component/previewDetails/yourDetails";
+import CompanyDetails from "@/app/component/inputDetails/companyDetails";
+import YourDetails from "@/app/component/inputDetails/yourDetails";
 import { useSearchParams } from "next/navigation";
 
 export const InvoiceInputSteps = () => {
