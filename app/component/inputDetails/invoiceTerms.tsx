@@ -1,6 +1,6 @@
 "use client";
-import CustomTextInput from "../ui/customTextInput";
-import CustomDateInput from "../ui/customDateInput";
+import CustomTextInput from "@/app/component/ui/customTextInput";
+import CustomDateInput from "@/app/component/ui/customDateInput";
 
 const InvoiceTerms = () => (
   <div className="pt-24">
