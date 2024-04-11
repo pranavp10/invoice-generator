@@ -9,7 +9,7 @@ type CustomInputProps = {
   variableName: string;
 };
 
-export const CustomTextInput = ({
+const CustomTextInput = ({
   label,
   placeholder,
   variableName,

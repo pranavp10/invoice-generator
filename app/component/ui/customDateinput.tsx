@@ -16,7 +16,7 @@ type CustomNumberProps = {
   variableName: string;
 };
 
-export const CustomDateInput = ({ label, variableName }: CustomNumberProps) => {
+const CustomDateInput = ({ label, variableName }: CustomNumberProps) => {
   const { value, setValue } = useQueryParams(variableName);
   const [open, setOpen] = useState(false);
 
