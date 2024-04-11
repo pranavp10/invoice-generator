@@ -16,7 +16,7 @@ type CustomNumberProps = {
   variableName: string;
 };
 
-const CustomDateInput = ({ label, variableName }: CustomNumberProps) => {
+const DateInput = ({ label, variableName }: CustomNumberProps) => {
   const { value, setValue } = useQueryParams(variableName);
   const [open, setOpen] = useState(false);
 
@@ -58,4 +58,4 @@ const CustomDateInput = ({ label, variableName }: CustomNumberProps) => {
   );
 };
 
-export default CustomDateInput;
+export default DateInput;

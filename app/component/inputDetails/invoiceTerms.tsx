@@ -1,6 +1,6 @@
 "use client";
 import CustomTextInput from "@/app/component/ui/customTextInput";
-// import CustomDateInput from "@/app/component/ui/customDateInput";
+import DateInput from "@/app/component/ui/dateInput";
 
 const InvoiceTerms = () => (
   <div className="pt-24">
@@ -10,8 +10,8 @@ const InvoiceTerms = () => (
       placeholder="INVOICE-01"
       variableName="invoiceNo"
     />
-    {/* <CustomDateInput label="Issue date" variableName="issueDate" />
-    <CustomDateInput label="Due date" variableName="dueDate" /> */}
+    <DateInput label="Issue date" variableName="issueDate" />
+    <DateInput label="Due date" variableName="dueDate" />
   </div>
 );
 
