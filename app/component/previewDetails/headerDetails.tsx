@@ -10,7 +10,7 @@ export const HeaderDetails = () => {
   const dueDate = searchParams.get("dueDate");
 
   return (
-    <div className="border-b py-4 px-10 grid grid-cols-2 justify-between">
+    <div className="border-b py-4 px-10 grid grid-cols-2 justify-between border-dashed">
       <div>
         <p className="text-[11px] text-neutral-400 font-semibold uppercase">
           Invoice NO

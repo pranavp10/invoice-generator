@@ -96,7 +96,7 @@ const CurrencyInput = () => {
         </PopoverContent>
       </Popover>
       <div
-        className={`absolute inset-x-0 bottom-0 border-t border-gray-300  group-focus:border-t ${
+        className={`absolute inset-x-0 bottom-0 border-t border-gray-300  group-focus:border-t border-dashed ${
           open ? "border-orange-500" : "group-hover:border-neutral-400"
         }`}
         aria-hidden="true"

@@ -30,7 +30,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         }  placeholder:text-neutral-700/40 placeholder:font-medium caret-orange-500`}
       />
       <div
-        className="absolute inset-x-0 bottom-0 border-t border-gray-300 peer-hover:border-neutral-400 peer-focus:border-t peer-focus:border-orange-500"
+        className="absolute inset-x-0 bottom-0 border-t border-gray-300 peer-hover:border-neutral-400 peer-focus:border-t peer-focus:border-orange-500 border-dashed"
         aria-hidden="true"
       />
     </div>

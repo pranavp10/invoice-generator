@@ -52,7 +52,7 @@ export const ImageInput = ({ label, variableName }: CustomNumberProps) => {
           alt="company logo"
         />
       ) : (
-        <button className="text-neutral-500/70 border rounded-full p-1.5">
+        <button className="text-neutral-500/70 border rounded-full p-1.5 border-dashed">
           <Plus className="w-4 h-4" />
         </button>
       )}
@@ -66,7 +66,7 @@ export const ImageInput = ({ label, variableName }: CustomNumberProps) => {
         }  placeholder:text-neutral-700/40 placeholder:font-medium caret-orange-500`}
       />
       <div
-        className="absolute inset-x-0 bottom-0 border-t border-gray-300 peer-hover:border-neutral-400 peer-focus:border-t peer-focus:border-orange-500"
+        className="absolute inset-x-0 bottom-0 border-t border-gray-300 peer-hover:border-neutral-400 peer-focus:border-t peer-focus:border-orange-500 border-dashed"
         aria-hidden="true"
       />
     </div>

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Page = () => (
   <div className="min-h-screen overflow-y-auto h-full flex items-center">
-    <div className="max-w-lg min-h-screen w-full h-full p-12 border-r flex flex-col justify-between">
+    <div className="max-w-lg min-h-screen w-full h-full p-12 border-r border-dashed flex flex-col justify-between">
       <div>
         <div className="flex gap-2 items-center">
           <Image
