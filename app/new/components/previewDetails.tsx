@@ -15,11 +15,13 @@ const PreviewDetails = () => (
         <CompanyDetails />
       </div>
     </div>
-    <div className="border-b justify-between border-dashed">
-      <InvoiceDetails />
-    </div>
-    <div className="">
-      <PaymentDetails />
+    <div className="flex flex-col justify-between">
+      <div className="border-b justify-between border-dashed">
+        <InvoiceDetails />
+      </div>
+      <div className="">
+        <PaymentDetails />
+      </div>
     </div>
   </div>
 );

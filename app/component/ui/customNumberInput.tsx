@@ -4,7 +4,7 @@ import { Input } from "@/app/component/ui/input";
 import useQueryParams from "@/app/hooks/useQueryParams";
 
 type CustomNumberProps = {
-  label: string;
+  label?: string;
   placeholder: string;
   variableName: string;
 };

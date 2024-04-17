@@ -39,7 +39,7 @@ export const YourDetails = () => {
       )}
       <div className="text-xs text-neutral-500/80">
         {yourAddress ? (
-          <p className="mb-2">{yourAddress}</p>
+          <p>{yourAddress}</p>
         ) : (
           <div className="rounded-md bg-neutral-100 h-4 w-3/6 animate-pulse my-2" />
         )}
