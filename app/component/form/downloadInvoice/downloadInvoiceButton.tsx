@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Download, RefreshCw } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const DownloadInvoice = () => {
+export const DownloadInvoiceButton = () => {
   const { push } = useRouter();
+
   return (
     <div className="flex h-[calc(100vh-208px)] justify-center items-center">
       <div>
@@ -28,5 +29,3 @@ const DownloadInvoice = () => {
     </div>
   );
 };
-
-export default DownloadInvoice;

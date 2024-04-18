@@ -1,56 +1,54 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
-import ImageInput from "../ui/imageInput";
+import ImageInput from "@/app/component/ui/imageInput";
 
-const CompanyDetails = () => (
+export const YourDetailsForm = () => (
   <div className="pt-24">
-    <p className="text-2xl font-semibold pb-3">Company Details</p>
+    <p className="text-2xl font-semibold pb-3">Your Details</p>
     <CustomTextInput
       label="Email"
       placeholder="e.g. pranav@prolab.sh"
-      variableName="email"
+      variableName="yourEmail"
     />
     <p className="pb-10 pt-3 text-xs font-medium text-neutral-500">
-      We&apos;ll fill the billing details automatically if we find the company.
+      We&apos;ll fill the billing details automatically if we find the your.
     </p>
     <p className="pb-2 text-sm font-medium text-neutral-500">Billing details</p>
     <CustomTextInput
-      label="Company name"
-      placeholder="Prolab Inc"
-      variableName="companyName"
+      label="Your Name"
+      placeholder="Pranav"
+      variableName="yourName"
     />
-    <ImageInput label="Logo" variableName="companyLogo" />
+    <ImageInput label="Logo" variableName="yourLogo" />
     <CustomTextInput
       label="Address"
       placeholder="Whitefield Circle,12"
-      variableName="companyAddress"
+      variableName="yourAddress"
     />
     <CustomTextInput
       label="City"
       placeholder="Bangalore"
-      variableName="companyCity"
+      variableName="yourCity"
     />
     <CustomTextInput
       label="State"
       placeholder="Karnataka"
-      variableName="companyState"
+      variableName="yourState"
     />
     <CustomNumberInput
       label="Zip"
       placeholder="560066"
-      variableName="companyZip"
+      variableName="yourZip"
     />
     <CustomTextInput
       label="Country"
       placeholder="India"
-      variableName="companyCountry"
+      variableName="yourCountry"
     />
     <CustomTextInput
       label="Tax ID"
       placeholder="GSTIN 1234"
-      variableName="companyTaxId"
+      variableName="yourTaxId"
     />
   </div>
 );
-
-export default CompanyDetails;

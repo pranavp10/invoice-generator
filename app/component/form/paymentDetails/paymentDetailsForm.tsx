@@ -1,7 +1,7 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
 
-const PaymentDetails = () => (
+export const PaymentDetailsForm = () => (
   <div className="pt-24">
     <p className="text-2xl font-semibold pb-3">Payment Details</p>
     <CustomTextInput
@@ -36,5 +36,3 @@ const PaymentDetails = () => (
     />
   </div>
 );
-
-export default PaymentDetails;

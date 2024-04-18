@@ -2,7 +2,7 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import DateInput from "@/app/component/ui/dateInput";
 
-const InvoiceTerms = () => (
+export const InvoiceTermsForm = () => (
   <div className="pt-24">
     <p className="text-2xl font-semibold pb-3">Invoice terms</p>
     <CustomTextInput
@@ -14,5 +14,3 @@ const InvoiceTerms = () => (
     <DateInput label="Due date" variableName="dueDate" />
   </div>
 );
-
-export default InvoiceTerms;

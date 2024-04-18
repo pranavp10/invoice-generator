@@ -1,20 +1,19 @@
-"use client";
-import useItemParams, { Item } from "@/app/hooks/useItemsParams";
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
+import { Item } from "@/app/hooks/useItemsParams";
 import { currencyList } from "@/lib/currency";
-import { useSearchParams } from "next/navigation";
 
-const InvoiceDetails = () => {
-  const searchParams = useSearchParams();
-  const note = searchParams.get("note");
-  const discount = searchParams.get("discount");
-  const taxRate = searchParams.get("tax");
-  const { items } = useItemParams();
-
-  const currencyType = searchParams.get("currency") || "INR";
+export const InvoiceDetailsPreview: React.FC<InvoiceDetails> = ({
+  note,
+  discount,
+  taxRate,
+  items,
+  currency = "INR",
+}) => {
+  const currencyType = currency;
   const currencyDetails = currencyList.find(
     (currency) => currency.value.toLowerCase() === currencyType.toLowerCase()
   )?.details;
-
   const subtotal = calculateTotalAmount(items);
   const discountAmount = subtotal - (discount ? +discount : 0);
   const taxAmount = discountAmount * ((taxRate ? +taxRate : 0) / 100);
@@ -143,5 +142,3 @@ const addCommasToNumber = (number: number): string => {
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return parts.join(".");
 };
-
-export default InvoiceDetails;

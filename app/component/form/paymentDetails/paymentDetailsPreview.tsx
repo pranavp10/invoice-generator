@@ -1,16 +1,14 @@
-"use client";
 import { currencyList } from "@/lib/currency";
-import { useSearchParams } from "next/navigation";
 
-const PaymentDetails = () => {
-  const searchParams = useSearchParams();
-  const bankName = searchParams.get("bankName");
-  const accountNumber = searchParams.get("accountNumber");
-  const accountName = searchParams.get("accountName");
-  const routingCode = searchParams.get("routingCode");
-  const swiftCode = searchParams.get("swiftCode");
-  const ifscCode = searchParams.get("ifscCode");
-  const currencyType = searchParams.get("currency") || "INR";
+export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
+  bankName,
+  accountNumber,
+  accountName,
+  routingCode,
+  swiftCode,
+  ifscCode,
+  currencyType = "INR",
+}) => {
   const currencyDetails = currencyList.find(
     (currency) => currency.value.toLowerCase() === currencyType.toLowerCase()
   )?.details;
@@ -120,5 +118,3 @@ const PaymentDetails = () => {
     </div>
   );
 };
-
-export default PaymentDetails;

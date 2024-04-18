@@ -1,21 +1,19 @@
 "use client";
 import CustomTextInput from "@/app/component/ui/customTextInput";
-import CurrencyInput from "../ui/currencyInput";
-import useQueryParams from "../../hooks/useQueryParams";
+import CurrencyInput from "@/app/component/ui/currencyInput";
 import { currencyList } from "@/lib/currency";
 import useItemParams from "@/app/hooks/useItemsParams";
-import { Input } from "../ui/input";
+import { Input } from "@/app/component/ui/input";
 import { Plus, Trash2 } from "lucide-react";
-import CustomNumberInput from "../ui/customNumberInput";
+import CustomNumberInput from "@/app/component/ui/customNumberInput";
+import useQueryParams from "@/app/hooks/useQueryParams";
 
-const InvoiceDetails = () => {
+export const InvoiceDetailsForm = () => {
   const { value } = useQueryParams("currency", "INR");
   const currencyDetails = currencyList.find(
     (currency) => currency.value.toLowerCase() === value.toLowerCase()
   )?.details;
   const { items, setValue } = useItemParams();
-
-  const updateItem = () => {};
 
   return (
     <div className="pt-24">
@@ -138,5 +136,3 @@ const InvoiceDetails = () => {
     </div>
   );
 };
-
-export default InvoiceDetails;

@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className="bg-[#f7f7f7] flex justify-center items-center overflow-x-hidden">
       <div className="border-l border-r max-w-4xl w-full mx-auto border-dashed h-full flex justify-center flex-col border-gray-300">
-        <div className="min-h-screen justify-center items-center h-full flex flex-col">
+        <div className="justify-center items-center h-full flex flex-col my-20">
           <div className="border-t border-dashed border-gray-300 w-full mx-auto py-10 flex justify-center items-center relative">
             <Plus className="text-orange-500 group-hover:text-orange-500 w-7 h-7 absolute top-0 -translate-x-1/2 -translate-y-1/2 left-0" />
             <Image
@@ -69,8 +69,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-
-        <p className="font-medium text-xl md:text-3xl border-t border-gray-300 border-b border-dashed md:py-6 text-left py-3 px-7 text-neutral-700 text-center">
+        <p className="font-medium text-xl md:text-3xl border-t border-gray-300 border-b border-dashed md:py-6 py-3 px-7 text-neutral-700 text-center">
           Here&apos;s why you&apos;ll love our Free Invoice Generator
         </p>
         <div className="grid sm:grid-cols-2 relative">

@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import PreviewDetails from "./components/previewDetails";
-import Steps from "./components/steps";
-import { InvoiceInputSteps } from "./components/invoiceInputSteps";
 import Image from "next/image";
+import { UserInputForm } from "@/app/component/form/userInputForm";
+import { FormSteps } from "@/app/component/form/step/fromSteps";
+import { UserDataPreview } from "@/app/new/component/userDataPreview";
 
 const Page = () => (
   <div className="min-h-screen overflow-y-auto h-full flex items-center">
@@ -22,17 +22,17 @@ const Page = () => (
           </div>
         </div>
         <Suspense>
-          <InvoiceInputSteps />
+          <UserInputForm />
         </Suspense>
       </div>
       <Suspense>
-        <Steps />
+        <FormSteps />
       </Suspense>
     </div>
     <div className="relative min-h-screen h-full w-full flex justify-center items-center">
       <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       <Suspense>
-        <PreviewDetails />
+        <UserDataPreview />
       </Suspense>
     </div>
   </div>
