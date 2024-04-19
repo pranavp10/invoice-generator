@@ -81,7 +81,7 @@ export default function RootLayout({
         ></script>
         <script
           defer
-          data-domain="videocompress.prolab.sh"
+          data-domain="invoice-generator.prolab.sh"
           src="https://plausible.prolab.sh/js/script.tagged-events.js"
         ></script>
       </head>
