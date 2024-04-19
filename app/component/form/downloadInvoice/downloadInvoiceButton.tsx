@@ -1,8 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { tw } from "@/lib/tw";
+import { Document, PDFDownloadLink, Page } from "@react-pdf/renderer";
 import { Download, RefreshCw } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { YourDetailsPDF } from "../yourDetails/yourDetailsPdf";
 
 export const DownloadInvoiceButton = () => {
   const { push } = useRouter();
@@ -14,9 +17,28 @@ export const DownloadInvoiceButton = () => {
         <p className="text-neutral-500 text-xl pb-7">
           Please review the details carefully before downloading your invoice.
         </p>
-        <Button className="w-full h-12 rounded-lg text-lg">
-          <Download className="mr-2 h-6 w-6" /> Download Invoice
-        </Button>
+        <PDFDownloadLink
+          fileName="invoice.pdf"
+          document={
+            <Document>
+              <Page size="A4" style={tw("p-4 flex flex-row flex-wrap gap-4")}>
+                <YourDetailsPDF />
+              </Page>
+            </Document>
+          }
+        >
+          {({ loading }) =>
+            loading ? (
+              <Button className="w-full h-12 rounded-lg text-lg">
+                <Download className="mr-2 h-6 w-6" /> Loading Invoice
+              </Button>
+            ) : (
+              <Button className="w-full h-12 rounded-lg text-lg">
+                <Download className="mr-2 h-6 w-6" /> Download Invoice
+              </Button>
+            )
+          }
+        </PDFDownloadLink>
         <Button
           onClick={() => push("/")}
           variant="link"
