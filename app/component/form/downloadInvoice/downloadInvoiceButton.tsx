@@ -5,10 +5,18 @@ import { tw } from "@/lib/tw";
 import { Document, PDFDownloadLink, Page } from "@react-pdf/renderer";
 import { Download, RefreshCw } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { YourDetailsPDF } from "../yourDetails/yourDetailsPdf";
+import { PdfDetails } from "../pdfDetails";
+import { useData } from "@/app/hooks/useData";
 
 export const DownloadInvoiceButton = () => {
   const { push } = useRouter();
+  const {
+    companyDetails,
+    invoiceDetails,
+    invoiceTerms,
+    paymentDetails,
+    yourDetails,
+  } = useData();
 
   return (
     <div className="flex h-[calc(100vh-208px)] justify-center items-center">
@@ -21,8 +29,14 @@ export const DownloadInvoiceButton = () => {
           fileName="invoice.pdf"
           document={
             <Document>
-              <Page size="A4" style={tw("p-4 flex flex-row flex-wrap gap-4")}>
-                <YourDetailsPDF />
+              <Page size="A4">
+                <PdfDetails
+                  companyDetails={companyDetails}
+                  invoiceDetails={invoiceDetails}
+                  invoiceTerms={invoiceTerms}
+                  paymentDetails={paymentDetails}
+                  yourDetails={yourDetails}
+                />
               </Page>
             </Document>
           }
