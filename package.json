@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@onedoc/react-print": "^0.1.128",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@react-pdf/renderer": "^3.4.2",
     "@sentry/nextjs": "^7.109.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
