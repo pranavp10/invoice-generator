@@ -14,7 +14,6 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-pdf/renderer": "^3.4.2",
-    "@sentry/nextjs": "^7.109.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "0.2.1",
@@ -28,8 +27,7 @@
     "react-dom": "latest",
     "react-pdf-tailwind": "^2.3.0",
     "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7",
-    "zustand": "^4.5.2"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
