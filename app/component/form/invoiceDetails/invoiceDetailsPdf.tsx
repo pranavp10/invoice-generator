@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, View } from "@react-pdf/renderer";
 import { currencyList } from "@/lib/currency";
-import { Item } from "@/app/hooks/useItemsParams";
 
-export const InvoiceDetailsPdf: React.FC<InvoiceDetails> = ({
+export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
   note,
   discount,
   taxRate,

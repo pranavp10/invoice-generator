@@ -22,12 +22,18 @@ interface YourDetails {
   yourZip?: string | null;
 }
 
-interface InvoiceDetails {
+interface InvoiceItemDetails {
   note?: string | null;
   discount?: string | null;
   taxRate?: string | null;
   items: Item[];
   currency?: string;
+}
+
+interface Item {
+  itemDescription: string;
+  qty?: number;
+  amount?: number;
 }
 
 interface InvoiceTerms {
@@ -48,6 +54,6 @@ interface PaymentDetails {
 
 type InvoiceData = PaymentDetails &
   InvoiceTerms &
-  InvoiceDetails &
+  InvoiceItemDetails &
   YourDetails &
   CompanyDetails;

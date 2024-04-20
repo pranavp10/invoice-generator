@@ -6,11 +6,10 @@ import { InvoiceTermsForm } from "@/app/component/form/invoiceTerms/invoiceTerms
 import { PaymentDetailsForm } from "@/app/component/form/paymentDetails/paymentDetailsForm";
 import { CompanyDetailsForm } from "@/app/component/form/companyDetails/companyDetailsForm";
 import { YourDetailsForm } from "@/app/component/form/yourDetails/yourDetailsForm";
-import { useSearchParams } from "next/navigation";
+import { useGetValue } from "@/app/hooks/useGetValue";
 
 export const UserInputForm = () => {
-  const searchParams = useSearchParams();
-  const step = searchParams.get("step") || "1";
+  const step = useGetValue("step", "1");
 
   return (
     <div>

@@ -1,5 +1,4 @@
-import useItemParams from "@/app/hooks/useItemsParams";
-import { useGetValue } from "@/app/hooks/useGetValue";
+import { useGetValue, useItemParams } from "@/app/hooks/useGetValue";
 
 export const useData = () => {
   const yourEmail = useGetValue("yourEmail");
@@ -25,7 +24,7 @@ export const useData = () => {
   const note = useGetValue("note");
   const discount = useGetValue("discount");
   const taxRate = useGetValue("tax");
-  const { items } = useItemParams();
+  const items = useItemParams();
 
   const bankName = useGetValue("bankName");
   const accountNumber = useGetValue("accountNumber");

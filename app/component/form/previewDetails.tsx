@@ -13,7 +13,7 @@ export const PreviewDetails = ({
 }: {
   yourDetails: YourDetails;
   companyDetails: CompanyDetails;
-  invoiceDetails: InvoiceDetails;
+  invoiceDetails: InvoiceItemDetails;
   paymentDetails: PaymentDetails;
   invoiceTerms: InvoiceTerms;
 }) => (

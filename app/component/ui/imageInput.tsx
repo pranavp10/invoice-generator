@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import useQueryParams from "@/app/hooks/useQueryParams";
 import { getInitialValue } from "@/lib/getInitialValue";
 import { Plus } from "lucide-react";
 import { useRef } from "react";

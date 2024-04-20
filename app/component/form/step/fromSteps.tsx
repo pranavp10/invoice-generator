@@ -1,10 +1,9 @@
 "use client";
-import useQueryParams from "@/app/hooks/useQueryParams";
 import StepButton from "@/app/component/ui/stepButton";
+import { useGetValue } from "@/app/hooks/useGetValue";
 
 export const FormSteps = () => {
-  const { value } = useQueryParams("step");
-  const stepValue = value || "1";
+  const stepValue = useGetValue("step") || "1";
   const stepValueDetails = getStepsDetails(stepValue);
 
   return (

@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Item } from "@/app/hooks/useItemsParams";
 import { currencyList } from "@/lib/currency";
 
-export const InvoiceDetailsPreview: React.FC<InvoiceDetails> = ({
+export const InvoiceDetailsPreview: React.FC<InvoiceItemDetails> = ({
   note,
   discount,
   taxRate,
@@ -78,7 +77,7 @@ export const InvoiceDetailsPreview: React.FC<InvoiceDetails> = ({
             <p className="text-xs font-medium text-neutral-400 px-10">{note}</p>
           </div>
         ) : (
-          <div></div>
+          <div />
         )}
         <div>
           <div className="flex justify-between items-center mx-10 border-b border-dashed py-3">
