@@ -25,6 +25,7 @@
     "react": "latest",
     "react-day-picker": "^8.10.0",
     "react-dom": "latest",
+    "react-hook-form": "^7.51.3",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
   },

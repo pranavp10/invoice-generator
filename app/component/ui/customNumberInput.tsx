@@ -1,7 +1,8 @@
 "use client";
 
 import { Input } from "@/app/component/ui/input";
-import useQueryParams from "@/app/hooks/useQueryParams";
+import { getInitialValue } from "@/lib/getInitialValue";
+import { Controller } from "react-hook-form";
 
 type CustomNumberProps = {
   label?: string;
@@ -13,24 +14,25 @@ export const CustomNumberInput = ({
   label,
   placeholder,
   variableName,
-}: CustomNumberProps) => {
-  const { value, setValue } = useQueryParams(variableName);
-
-  return (
-    <Input
-      label={label}
-      placeholder={placeholder}
-      value={value}
-      type="text"
-      pattern="[0-9]*"
-      onChange={(e) => {
-        const inputValue = e.target.value;
-        if (/^-?\d*\.?\d*$/.test(inputValue) || inputValue === "") {
-          setValue(inputValue);
-        }
-      }}
-    />
-  );
-};
+}: CustomNumberProps) => (
+  <Controller
+    render={({ field: { onChange, value } }) => (
+      <Input
+        label={label}
+        placeholder={placeholder}
+        value={value}
+        type="text"
+        pattern="[0-9]*"
+        onChange={(e) => {
+          const updatedValue = e.target.value;
+          localStorage.setItem(variableName, updatedValue);
+          onChange(updatedValue);
+        }}
+      />
+    )}
+    defaultValue={getInitialValue(variableName)}
+    name={variableName}
+  />
+);
 
 export default CustomNumberInput;

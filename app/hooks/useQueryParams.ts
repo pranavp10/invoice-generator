@@ -1,27 +1,31 @@
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { useEffect, useState } from "react";
 
 const useQueryParams = (variableName: string, defaultValue?: string): { value: string, setValue: (value: string) => void } => {
-    const searchParams = useSearchParams();
-    const router = useRouter();
-    const value = searchParams.get(variableName) || defaultValue || "";
-    const pathname = usePathname();
+    const initialValue = getInitialValue(variableName, defaultValue);
+    const [value, setValue] = useState<string>(initialValue);
 
-    const createQueryString = useCallback(
-        (value: string) => {
-            const params = new URLSearchParams(searchParams.toString());
-            params.set(variableName, value);
-            return params.toString();
-        },
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [searchParams]
-    );
-    const setValue = (value: string) =>
-        router.push(
-            pathname + "?" + createQueryString(value)
-        )
+    useEffect(() => {
+        try {
+            localStorage.setItem(variableName, value);
+        } catch (error) {
+            console.error("Error while setting item in local storage:", error);
+        }
+    }, [variableName, value]);
 
-    return { value, setValue }
-}
+    const updateValue = (newValue: string) => {
+        setValue(newValue);
+    };
 
-export default useQueryParams
+    return { value, setValue: updateValue };
+};
+
+const getInitialValue = (variableName: string, defaultValue?: string): string => {
+    try {
+        return localStorage.getItem(variableName) || defaultValue || "";
+    } catch (error) {
+        console.error("Error while getting item from local storage:", error);
+        return defaultValue || "";
+    }
+};
+
+export default useQueryParams;

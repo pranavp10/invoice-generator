@@ -33,14 +33,14 @@ export const FormSteps = () => {
 const step1 = {
   previous: null,
   nextStep: {
-    title: "Your Details",
+    title: "Company Details",
     step: "2",
   },
 };
 
 const step2 = {
   previous: {
-    title: "Company Details",
+    title: "Your Details",
     step: "1",
   },
   nextStep: {

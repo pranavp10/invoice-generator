@@ -4,7 +4,7 @@ import ImageInput from "@/app/component/ui/imageInput";
 
 export const CompanyDetailsForm = () => (
   <div className="pt-24">
-    <p className="text-2xl font-semibold pb-3">Company Details</p>
+    <p className="text-2xl font-semibold pb-3">Company Details (To)</p>
     <CustomTextInput
       label="Email"
       placeholder="e.g. pranav@prolab.sh"
