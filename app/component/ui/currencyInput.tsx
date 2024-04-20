@@ -114,7 +114,7 @@ const CurrencyInput = () => {
         );
       }}
       name={"currency"}
-      defaultValue={getInitialValue("currency") ?? "INR"}
+      defaultValue={getInitialValue("currency", "INR")}
     />
   );
 };

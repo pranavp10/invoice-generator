@@ -12,21 +12,21 @@ export const InvoiceTermsPreview: React.FC<InvoiceTerms> = ({
       </p>
       <p className="font-medium text-xs">{invoiceNumber}</p>
     </div>
-    <div className="flex items-center gap-4 px-10">
+    <div className="flex items-center justify-between pl-10">
       <div>
         <p className="text-[11px] text-neutral-400 font-semibold uppercase">
           Issued
         </p>
         <p className="font-medium text-xs">
-          {issueDate ? format(issueDate, "M/d/yy'") : ""}
+          {issueDate ? format(issueDate, "do MMM yyyy'") : ""}
         </p>
       </div>
       <div>
-        <p className="text-[11px] text-neutral-400 font-semibold uppercase">
+        <p className="text-[11px] text-neutral-400 font-semibold uppercase text-right">
           Due Date
         </p>
         <p className="font-medium text-xs">
-          {dueDate ? format(dueDate, "M/d/yy'") : ""}
+          {dueDate ? format(dueDate, "do MMM yyyy'") : ""}
         </p>
       </div>
     </div>

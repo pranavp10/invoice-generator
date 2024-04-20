@@ -65,8 +65,8 @@ const StepButton = ({ isPrevious, title, step }: StepButtonProps) => (
         )}
       </>
     )}
-    name={"step"}
-    defaultValue={getInitialValue("step")}
+    name="step"
+    defaultValue={getInitialValue("step") ?? "1"}
   />
 );
 

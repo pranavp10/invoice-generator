@@ -1,11 +1,8 @@
-import { NewInoviceForm } from "@/app/new/component/NewInoviceForm";
-import { Suspense } from "react";
+import { NewInvoiceForm } from "@/app/new/component/NewInvoiceForm";
 
 const Page = () => (
   <div className="min-h-screen overflow-y-auto h-full flex items-center">
-    <Suspense>
-      <NewInoviceForm />
-    </Suspense>
+    <NewInvoiceForm />
   </div>
 );
 

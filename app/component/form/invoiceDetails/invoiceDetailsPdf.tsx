@@ -40,7 +40,7 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
         <View key={index}>
           <Text>{itemDescription}</Text>
           <View>
-            <Text>{qty || 1}</Text>
+            <Text>{qty ? qty : "-"}</Text>
             <Text>{amount ? addCommasToNumber(amount) : ""}</Text>
             <Text>
               {currencyDetails?.currencySymbol}

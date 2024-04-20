@@ -15,7 +15,7 @@ export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
 
   return (
     <div className="grid grid-cols-2">
-      <div className="py-4 px-10 ">
+      <div className="py-4 pl-10 pr-3">
         <p className="text-[11px] text-neutral-400 font-medium uppercase mb-3">
           Bank Details
         </p>
@@ -25,7 +25,7 @@ export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
               Bank Name
             </p>
             {bankName ? (
-              <p className="flex justify-end truncate text-xs font-medium text-gray-600">
+              <p className="flex truncate text-xs font-medium text-gray-600">
                 {bankName}
               </p>
             ) : (
@@ -37,7 +37,7 @@ export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
               Account Number
             </p>
             {accountNumber ? (
-              <p className="flex justify-end truncate text-xs font-medium text-gray-600">
+              <p className="flex truncate text-xs font-medium text-gray-600">
                 {accountNumber}
               </p>
             ) : (
@@ -49,7 +49,7 @@ export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
               Account Name
             </p>
             {accountName ? (
-              <p className="flex justify-end truncate text-xs font-medium text-gray-600">
+              <p className="flex truncate text-xs font-medium text-gray-600">
                 {accountName}
               </p>
             ) : (
@@ -61,7 +61,7 @@ export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
               Swift Code
             </p>
             {swiftCode ? (
-              <p className="flex justify-end truncate text-xs font-medium text-gray-600">
+              <p className="flex truncate text-xs font-medium text-gray-600">
                 {swiftCode}
               </p>
             ) : (
@@ -73,7 +73,7 @@ export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
               <p className="truncate text-xs font-medium text-gray-500">
                 Routing Code
               </p>
-              <p className="flex justify-end truncate text-xs font-medium text-gray-600">
+              <p className="flex truncate text-xs font-medium text-gray-600">
                 {routingCode}
               </p>
             </div>
@@ -83,7 +83,7 @@ export const PaymentDetailsPreview: React.FC<PaymentDetails> = ({
               <p className="truncate text-xs font-medium text-gray-500">
                 IFSC Code
               </p>
-              <p className="flex justify-end truncate text-xs font-medium text-gray-600">
+              <p className="flex truncate text-xs font-medium text-gray-600">
                 {ifscCode}
               </p>
             </div>

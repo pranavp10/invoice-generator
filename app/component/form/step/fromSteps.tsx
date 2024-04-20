@@ -1,9 +1,10 @@
 "use client";
 import StepButton from "@/app/component/ui/stepButton";
 import { useGetValue } from "@/app/hooks/useGetValue";
+import { getInitialValue } from "@/lib/getInitialValue";
 
 export const FormSteps = () => {
-  const stepValue = useGetValue("step") || "1";
+  const stepValue = useGetValue("step", getInitialValue("step", "1"));
   const stepValueDetails = getStepsDetails(stepValue);
 
   return (

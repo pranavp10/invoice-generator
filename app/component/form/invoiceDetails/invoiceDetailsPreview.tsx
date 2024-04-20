@@ -56,7 +56,7 @@ export const InvoiceDetailsPreview: React.FC<InvoiceItemDetails> = ({
           </p>
           <div className="pl-10 grid grid-cols-3 items-center">
             <p className="flex truncate text-xs font-medium text-gray-600">
-              {qty || 1}
+              {qty || "-"}
             </p>
             <p className="flex truncate text-xs font-medium text-gray-600">
               {amount ? addCommasToNumber(amount) : ""}

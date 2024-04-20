@@ -7,9 +7,10 @@ import { PaymentDetailsForm } from "@/app/component/form/paymentDetails/paymentD
 import { CompanyDetailsForm } from "@/app/component/form/companyDetails/companyDetailsForm";
 import { YourDetailsForm } from "@/app/component/form/yourDetails/yourDetailsForm";
 import { useGetValue } from "@/app/hooks/useGetValue";
+import { getInitialValue } from "@/lib/getInitialValue";
 
 export const UserInputForm = () => {
-  const step = useGetValue("step", "1");
+  const step = useGetValue("step", getInitialValue("step", "1"));
 
   return (
     <div>
