@@ -1,10 +1,10 @@
-import { tw } from "@/lib/tw";
 import { View } from "@react-pdf/renderer";
 import { YourDetailsPDF } from "./yourDetails/yourDetailsPdf";
 import { InvoiceTermsPdf } from "./invoiceTerms/InvoiceTermsPdf";
 import { CompanyDetailsPdf } from "./companyDetails/companyDetailsPdf";
 import { InvoiceDetailsPdf } from "./invoiceDetails/invoiceDetailsPdf";
 import { PaymentDetailsPdf } from "./paymentDetails/paymentDetailsPdf";
+import { pdfUtils } from "@/lib/pdfStyles";
 
 export const PdfDetails = ({
   yourDetails,
@@ -19,20 +19,20 @@ export const PdfDetails = ({
   paymentDetails: PaymentDetails;
   invoiceTerms: InvoiceTerms;
 }) => (
-  <View style={{ width: "100%" }}>
+  <View>
     <InvoiceTermsPdf {...invoiceTerms} />
     <View
-      style={tw("border-b  grid grid-cols-2 justify-between border-dashed")}
+      style={{
+        ...pdfUtils.flexRowBetween,
+        borderTop: "1px solid black",
+        borderBottom: '"1px solid black"',
+      }}
     >
-      <View style={tw("py-4 px-10 border-r border-dashed")}>
-        <YourDetailsPDF {...yourDetails} />
-      </View>
-      <View style={tw("py-4 px-10 ")}>
-        <CompanyDetailsPdf {...companyDetails} />
-      </View>
+      <YourDetailsPDF {...yourDetails} />
+      <CompanyDetailsPdf {...companyDetails} />
     </View>
-    <View style={tw("flex flex-col justify-between")}>
-      <View style={tw("border-b justify-between border-dashed")}>
+    <View>
+      <View>
         <InvoiceDetailsPdf {...invoiceDetails} />
       </View>
       <View>

@@ -1,12 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { tw } from "@/lib/tw";
-import { Document, PDFDownloadLink, Page } from "@react-pdf/renderer";
+import { Document, Font, PDFDownloadLink, Page } from "@react-pdf/renderer";
 import { Download, RefreshCw } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { PdfDetails } from "../pdfDetails";
 import { useData } from "@/app/hooks/useData";
+import { pdfContainers } from "@/lib/pdfStyles";
 
 export const DownloadInvoiceButton = () => {
   const { push } = useRouter();
@@ -29,7 +29,7 @@ export const DownloadInvoiceButton = () => {
           fileName="invoice.pdf"
           document={
             <Document>
-              <Page size="A4">
+              <Page size="A4" style={pdfContainers.page}>
                 <PdfDetails
                   companyDetails={companyDetails}
                   invoiceDetails={invoiceDetails}
@@ -65,3 +65,41 @@ export const DownloadInvoiceButton = () => {
     </div>
   );
 };
+
+Font.register({
+  family: "Geist",
+  fonts: [
+    {
+      src: "/font/Geist-Thin.ttf",
+      fontWeight: "thin",
+    },
+    {
+      src: "/font/Geist-Ultralight.ttf",
+      fontWeight: "ultralight",
+    },
+    {
+      src: "/font/Geist-Light.ttf",
+      fontWeight: "light",
+    },
+    {
+      src: "/font/Geist-Regular.ttf",
+      fontWeight: "normal",
+    },
+    {
+      src: "/font/Geist-Medium.ttf",
+      fontWeight: "medium",
+    },
+    {
+      src: "/font/Geist-Semibold.ttf",
+      fontWeight: "semibold",
+    },
+    {
+      src: "/font/Geist-Bold.ttf",
+      fontWeight: "bold",
+    },
+    {
+      src: "/font/Geist-UltraBlack.ttf",
+      fontWeight: "ultrabold",
+    },
+  ],
+});

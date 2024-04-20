@@ -4,7 +4,7 @@
 
 import React from "react";
 import { Image, Text, View } from "@react-pdf/renderer";
-import { tw } from "@/lib/tw";
+import { pdfContainers, pdfTypography } from "@/lib/pdfStyles";
 
 export const YourDetailsPDF: React.FC<YourDetails> = ({
   yourEmail,
@@ -17,59 +17,35 @@ export const YourDetailsPDF: React.FC<YourDetails> = ({
   yourTaxId,
   yourZip,
 }) => (
-  <View>
-    <Text
-      style={tw("text-[11px] text-neutral-400 font-semibold uppercase pb-3.5")}
-    >
-      From
-    </Text>
-    <View style={tw("h-10 mb-3")}>
-      {yourLogo ? (
-        <Image source={yourLogo} style={tw("h-10 rounded-md")} />
-      ) : (
-        <View
-          style={tw("rounded-full bg-neutral-100 h-10 w-10 animate-pulse")}
+  <View style={pdfContainers.YourDetails}>
+    <Text style={{ ...pdfTypography.title, marginBottom: 14 }}>From</Text>
+    <View style={{ height: 40, marginBottom: 12 }}>
+      {yourLogo && (
+        <Image
+          style={{ height: 40, borderRadius: 6 }}
+          src={{
+            uri: yourLogo,
+            method: "GET",
+            headers: { "Cache-Control": "no-cache" },
+            body: "",
+          }}
         />
       )}
     </View>
-    {yourName ? (
-      <Text style={tw("text-2xl font-medium")}>{yourName}</Text>
-    ) : (
-      <View
-        style={tw("rounded-md bg-neutral-100 h-5 w-5/6  animate-pulse mb-4")}
-      />
+    {yourName && <Text style={pdfTypography.text2xl}>{yourName}</Text>}
+    {yourEmail && (
+      <Text style={{ ...pdfTypography.description, marginBottom: 12 }}>
+        {yourEmail}
+      </Text>
     )}
-    {yourEmail ? (
-      <Text style={tw("text-neutral-500/90 text-sm mb-3")}>{yourEmail}</Text>
-    ) : (
-      <View
-        style={tw("rounded-md bg-neutral-100 h-4 w-4/6 animate-pulse my-2")}
-      />
-    )}
-    <View style={tw("text-xs text-neutral-500/80")}>
-      {yourAddress ? (
-        <p>{yourAddress}</p>
-      ) : (
-        <View
-          style={tw("rounded-md bg-neutral-100 h-4 w-3/6 animate-pulse my-2")}
-        />
-      )}
-      {yourAddress || yourState || yourZip ? (
-        <Text style={tw("mb-0.5")}>
+    <View style={pdfTypography.description}>
+      {yourAddress && <Text>{yourAddress}</Text>}
+      {(yourCity || yourState || yourZip) && (
+        <Text style={{ marginBottom: 2 }}>
           {yourCity}, {yourState} {yourZip}
         </Text>
-      ) : (
-        <View
-          style={tw("rounded-md bg-neutral-100 h-4 w-4/6 animate-pulse my-3")}
-        />
       )}
-      {yourCountry ? (
-        <Text style={tw("mb-1")}>{yourCountry}</Text>
-      ) : (
-        <View
-          style={tw("rounded-md bg-neutral-100 h-4 w-3/6 animate-pulse my-2")}
-        />
-      )}
+      {yourCountry && <Text style={{ marginBottom: 4 }}>{yourCountry}</Text>}
       {yourTaxId && <Text>Tax ID:{yourTaxId}</Text>}
     </View>
   </View>
