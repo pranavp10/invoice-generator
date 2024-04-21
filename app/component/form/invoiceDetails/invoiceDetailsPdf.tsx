@@ -44,42 +44,53 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
           </View>
         </View>
       </View>
-      {items.map(({ itemDescription, amount, qty }, index) => (
-        <View
-          key={index}
-          style={{
-            marginHorizontal: 40,
-            paddingVertical: 14,
-            borderBottom: "1px solid black",
-            ...pdfUtils.flexRowItemCenter,
-            borderTop: index === 0 ? "1px solid black" : undefined,
-          }}
-        >
-          <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
-            {itemDescription}
-          </Text>
+      {items.map(({ itemDescription, amount, qty }, index) => {
+        const containerStyle = {
+          marginHorizontal: 40,
+          paddingVertical: 14,
+          ...pdfUtils.borderBottom,
+          ...pdfUtils.flexRowItemCenter,
+        };
+        const borderStyle = index === 0 ? pdfUtils.borderTop : {};
+
+        return (
           <View
-            style={{ flex: 1, ...pdfUtils.flexRowItemCenter, paddingLeft: 80 }}
+            key={index}
+            style={{
+              ...containerStyle,
+              ...borderStyle,
+            }}
           >
             <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
-              {qty ? qty : "-"}
+              {itemDescription}
             </Text>
-            <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
-              {amount ? addCommasToNumber(amount) : ""}
-            </Text>
-            <Text
+            <View
               style={{
                 flex: 1,
-                ...pdfTypography.itemDescription,
-                textAlign: "right",
+                ...pdfUtils.flexRowItemCenter,
+                paddingLeft: 80,
               }}
             >
-              {currencyDetails?.currencySymbol}
-              {amount ? addCommasToNumber((qty ? qty : 1) * amount) : ""}
-            </Text>
+              <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
+                {qty ? qty : "-"}
+              </Text>
+              <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
+                {amount ? addCommasToNumber(amount) : ""}
+              </Text>
+              <Text
+                style={{
+                  flex: 1,
+                  ...pdfTypography.itemDescription,
+                  textAlign: "right",
+                }}
+              >
+                {currencyDetails?.currencySymbol}
+                {amount ? addCommasToNumber((qty ? qty : 1) * amount) : ""}
+              </Text>
+            </View>
           </View>
-        </View>
-      ))}
+        );
+      })}
       <View style={pdfUtils.flexRowItemCenter}>
         <View style={{ flex: 1, paddingTop: 24 }}>
           {note && (
@@ -94,8 +105,8 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
             style={{
               marginHorizontal: 40,
               paddingVertical: 14,
-              borderBottom: "1px solid black",
               ...pdfUtils.flexRowItemCenter,
+              ...pdfUtils.borderBottom,
             }}
           >
             <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>
@@ -117,8 +128,8 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
               style={{
                 marginHorizontal: 40,
                 paddingVertical: 14,
-                borderBottom: "1px solid black",
                 ...pdfUtils.flexRowItemCenter,
+                ...pdfUtils.borderBottom,
               }}
             >
               <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>
@@ -141,8 +152,8 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
               style={{
                 marginHorizontal: 40,
                 paddingVertical: 14,
-                borderBottom: "1px solid black",
                 ...pdfUtils.flexRowItemCenter,
+                ...pdfUtils.borderBottom,
               }}
             >
               <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>

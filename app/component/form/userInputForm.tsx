@@ -29,9 +29,7 @@ export const UserInputForm = () => {
       <div className={step === "5" ? "block" : "hidden"}>
         <InvoiceTermsForm />
       </div>
-      <div className={step === "6" ? "block" : "hidden"}>
-        <DownloadInvoiceButton />
-      </div>
+      {step === "6" && <DownloadInvoiceButton />}
     </div>
   );
 };

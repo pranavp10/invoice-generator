@@ -1,7 +1,9 @@
 import { StyleSheet } from '@react-pdf/renderer';
 
 const colors = {
+    gray200: '#e5e7eb',
     gray400: '#9ca3af',
+    gray500: '#6b7280',
     gray600: '#4b5563',
     'gray550/900': 'rgb(115 115 115 / 0.9)'
 }
@@ -35,6 +37,12 @@ export const pdfTypography = StyleSheet.create({
         fontSize: 16,
         fontWeight: "medium",
         flexWrap: 'wrap'
+    },
+    paymentTitle: {
+        fontSize: 12,
+        fontWeight: "medium",
+        flexWrap: 'wrap',
+        color: colors.gray500
     }
 
 })
@@ -46,6 +54,10 @@ export const pdfUtils = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
     },
+    borderTop: { borderTop: `1px solid ${colors.gray200}`, borderTopStyle: 'dashed', },
+    borderBottom: { borderBottom: `1px solid ${colors.gray200}`, borderBottomStyle: 'dashed', },
+    borderLeft: { borderLeft: `1px solid ${colors.gray200}`, borderLeftStyle: 'dashed', },
+    borderRight: { borderRight: `1px solid ${colors.gray200}`, borderRightStyle: 'dashed', },
     flexRowItemCenter: {
         display: 'flex',
         alignItems: 'center',
@@ -71,13 +83,10 @@ export const pdfContainers = StyleSheet.create({
     },
     invoiceTerms: {
         paddingHorizontal: 40,
-        paddingTop: 30,
-        paddingBottom: 16,
+        paddingVertical: 20,
         display: 'flex',
         alignItems: "center",
-        justifyContent: "space-between",
         flexDirection: 'row',
-        flex: 1
     },
     YourDetails: {
         paddingHorizontal: 40,

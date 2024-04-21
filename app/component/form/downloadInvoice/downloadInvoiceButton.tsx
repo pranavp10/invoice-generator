@@ -54,7 +54,7 @@ export const DownloadInvoiceButton = () => {
           }
         </PDFDownloadLink>
         <Button
-          onClick={() => push("/")}
+          onClick={() => push("/new")}
           variant="link"
           className="w-full h-12 text-lg"
         >

@@ -23,16 +23,17 @@ export const PdfDetails = ({
     <InvoiceTermsPdf {...invoiceTerms} />
     <View
       style={{
-        ...pdfUtils.flexRowBetween,
-        borderTop: "1px solid black",
-        borderBottom: '"1px solid black"',
+        display: "flex",
+        flexDirection: "row",
+        ...pdfUtils.borderTop,
+        ...pdfUtils.borderBottom,
       }}
     >
       <YourDetailsPDF {...yourDetails} />
       <CompanyDetailsPdf {...companyDetails} />
     </View>
     <View>
-      <View style={{ borderBottom: "1px solid black" }}>
+      <View style={pdfUtils.borderBottom}>
         <InvoiceDetailsPdf {...invoiceDetails} />
       </View>
       <View>

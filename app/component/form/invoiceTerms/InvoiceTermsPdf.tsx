@@ -16,7 +16,8 @@ export const InvoiceTermsPdf: React.FC<InvoiceTerms> = ({
     <View
       style={{
         ...pdfUtils.flexRowBetween,
-        paddingHorizontal: 40,
+        paddingRight: 20,
+        paddingLeft: 100,
         flex: 1,
       }}
     >
