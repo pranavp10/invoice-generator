@@ -57,9 +57,13 @@ export const ImageInput = ({ label, variableName }: CustomNumberProps) => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               const file = e.target.files?.[0];
               if (file && isAcceptedFileType(file)) {
-                const imageUrl = URL.createObjectURL(file);
-                localStorage.setItem(variableName, imageUrl);
-                onChange(imageUrl);
+                const reader = new FileReader();
+                reader.onload = () => {
+                  const url = reader.result as string;
+                  onChange(url);
+                  localStorage.setItem(variableName, url);
+                };
+                reader.readAsDataURL(file);
               }
             }}
             className={`peer w-full border-0 py-1.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6 hidden ${

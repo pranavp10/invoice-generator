@@ -3,7 +3,7 @@
 "use client";
 
 import React from "react";
-import { Image, Text, View } from "@react-pdf/renderer";
+import { Image, Text, View, pdf } from "@react-pdf/renderer";
 import { pdfContainers, pdfTypography } from "@/lib/pdfStyles";
 
 export const YourDetailsPDF: React.FC<YourDetails> = ({
@@ -19,17 +19,10 @@ export const YourDetailsPDF: React.FC<YourDetails> = ({
 }) => (
   <View style={pdfContainers.YourDetails}>
     <Text style={{ ...pdfTypography.title, marginBottom: 14 }}>From</Text>
-    <View style={{ height: 40, marginBottom: 12 }}>
+
+    <View style={pdfContainers.imageContainer}>
       {yourLogo && (
-        <Image
-          style={{ height: 40, borderRadius: 6 }}
-          src={{
-            uri: yourLogo,
-            method: "GET",
-            headers: { "Cache-Control": "no-cache" },
-            body: "",
-          }}
-        />
+        <Image style={{ height: 40, borderRadius: 6 }} src={yourLogo} />
       )}
     </View>
     {yourName && <Text style={pdfTypography.text2xl}>{yourName}</Text>}
