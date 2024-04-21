@@ -47,7 +47,7 @@ export const DownloadInvoiceButton = () => {
                 <Download className="mr-2 h-6 w-6" /> Loading Invoice
               </Button>
             ) : (
-              <Button className="w-full h-12 rounded-lg text-lg">
+              <Button className="w-full h-12 rounded-lg text-lg plausible-event-name=invoice-generated">
                 <Download className="mr-2 h-6 w-6" /> Download Invoice
               </Button>
             )
