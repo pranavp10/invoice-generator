@@ -18,11 +18,11 @@ This project provides a user-friendly invoice generation tool for freelancers, s
 
 ### Technologies Used
 
-- **Multimedia Framework:** [React PDF]([https://ffmpeg.org/](https://react-pdf.org/))
+- **PDF Generator:** [React PDF](https://react-pdf.org/)
 - **Framework:** [Next.js](https://nextjs.org)
 - **Deployment:** [Coolify](https://coolify.io)
 - **Styling:** [Tailwind CSS](http://tailwindcss.com)
-- **Analytics:** [Plausible](https://plausible.pranavp.xyz/videocompress.prolab.sh)
+- **Analytics:** [Plausible](https://invoice-generator.prolabp.sh/analytics)
 
 ### Running Locally
 
@@ -30,7 +30,7 @@ Ensure that you have Bun installed.
 
 ```bash
 git clone https://github.com/pranavp10/invoice-generator.git
-cd video-compress
+cd invoice-generator
 bun install
 bun run dev
 ```
@@ -41,7 +41,7 @@ Create `.env.local` file similar to `.env.example`.
 
 The Invoice generator is deployed using [Coolify](https://coolify.io) self hosted. Automatic deployments are triggered when changes are pushed to the main branch.
 
-[Live Invoice Generator Link](https://invoice-generaror.prolab.sh/)
+[Live Invoice Generator Link](https://invoice-generator.prolab.sh/)
 
 ### License
 
