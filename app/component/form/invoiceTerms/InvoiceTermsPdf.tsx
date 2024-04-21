@@ -15,7 +15,7 @@ export const InvoiceTermsPdf: React.FC<InvoiceTerms> = ({
     </View>
     <View
       style={{
-        ...pdfUtils.flexRowItemSpaceAround,
+        ...pdfUtils.flexRowBetween,
         paddingHorizontal: 40,
         flex: 1,
       }}
@@ -23,13 +23,13 @@ export const InvoiceTermsPdf: React.FC<InvoiceTerms> = ({
       <View>
         <Text style={pdfTypography.title}>Issued</Text>
         <Text style={pdfTypography.subTitle}>
-          {issueDate ? format(issueDate, "M/d/yy") : ""}
+          {issueDate ? format(issueDate, "do MMM yyyy") : ""}
         </Text>
       </View>
       <View>
         <Text style={pdfTypography.title}>Due Date</Text>
         <Text style={pdfTypography.subTitle}>
-          {dueDate ? format(dueDate, "M/d/yy") : ""}
+          {dueDate ? format(dueDate, "do MMM yyyy") : ""}
         </Text>
       </View>
     </View>

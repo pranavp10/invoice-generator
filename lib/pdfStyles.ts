@@ -2,6 +2,7 @@ import { StyleSheet } from '@react-pdf/renderer';
 
 const colors = {
     gray400: '#9ca3af',
+    gray600: '#4b5563',
     'gray550/900': 'rgb(115 115 115 / 0.9)'
 }
 
@@ -23,7 +24,19 @@ export const pdfTypography = StyleSheet.create({
     description: {
         color: colors['gray550/900'],
         fontSize: 12
+    },
+    itemDescription: {
+        color: colors.gray600,
+        fontSize: 12,
+        fontWeight: "medium",
+        flexWrap: 'wrap'
+    },
+    amount: {
+        fontSize: 16,
+        fontWeight: "medium",
+        flexWrap: 'wrap'
     }
+
 })
 
 export const pdfUtils = StyleSheet.create({

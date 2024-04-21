@@ -32,7 +32,7 @@ export const PdfDetails = ({
       <CompanyDetailsPdf {...companyDetails} />
     </View>
     <View>
-      <View>
+      <View style={{ borderBottom: "1px solid black" }}>
         <InvoiceDetailsPdf {...invoiceDetails} />
       </View>
       <View>

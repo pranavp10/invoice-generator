@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View } from "@react-pdf/renderer";
 import { currencyList } from "@/lib/currency";
+import { pdfTypography, pdfUtils } from "@/lib/pdfStyles";
 
 export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
   note,
@@ -20,75 +21,158 @@ export const InvoiceDetailsPdf: React.FC<InvoiceItemDetails> = ({
 
   return (
     <View>
-      <View>
-        <View>
-          <Text>Description</Text>
+      <View style={pdfUtils.flexRowItemCenter}>
+        <View style={{ flex: 1, paddingHorizontal: 40, paddingVertical: 16 }}>
+          <Text style={pdfTypography.title}>Description</Text>
         </View>
-        <View>
-          <View>
-            <Text>QTY</Text>
+        <View
+          style={{
+            flex: 1,
+            ...pdfUtils.flexRowItemCenter,
+            paddingHorizontal: 40,
+            paddingVertical: 16,
+          }}
+        >
+          <View style={{ flex: 1 }}>
+            <Text style={pdfTypography.title}>QTY</Text>
           </View>
-          <View>
-            <Text>Price</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={pdfTypography.title}>Price</Text>
           </View>
-          <View>
-            <Text>Amount</Text>
+          <View style={{ flex: 1, textAlign: "right" }}>
+            <Text style={pdfTypography.title}>Amount</Text>
           </View>
         </View>
       </View>
       {items.map(({ itemDescription, amount, qty }, index) => (
-        <View key={index}>
-          <Text>{itemDescription}</Text>
-          <View>
-            <Text>{qty ? qty : "-"}</Text>
-            <Text>{amount ? addCommasToNumber(amount) : ""}</Text>
-            <Text>
+        <View
+          key={index}
+          style={{
+            marginHorizontal: 40,
+            paddingVertical: 14,
+            borderBottom: "1px solid black",
+            ...pdfUtils.flexRowItemCenter,
+            borderTop: index === 0 ? "1px solid black" : undefined,
+          }}
+        >
+          <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
+            {itemDescription}
+          </Text>
+          <View
+            style={{ flex: 1, ...pdfUtils.flexRowItemCenter, paddingLeft: 80 }}
+          >
+            <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
+              {qty ? qty : "-"}
+            </Text>
+            <Text style={{ flex: 1, ...pdfTypography.itemDescription }}>
+              {amount ? addCommasToNumber(amount) : ""}
+            </Text>
+            <Text
+              style={{
+                flex: 1,
+                ...pdfTypography.itemDescription,
+                textAlign: "right",
+              }}
+            >
               {currencyDetails?.currencySymbol}
               {amount ? addCommasToNumber((qty ? qty : 1) * amount) : ""}
             </Text>
           </View>
         </View>
       ))}
-      <View>
-        {note ? (
-          <View>
-            <Text>Note</Text>
-            <Text>{note}</Text>
-          </View>
-        ) : (
-          <View />
-        )}
-        <View>
-          <View>
-            <Text>Subtotal</Text>
-            <Text>
+      <View style={pdfUtils.flexRowItemCenter}>
+        <View style={{ flex: 1, paddingTop: 24 }}>
+          {note && (
+            <View style={{ paddingHorizontal: 40 }}>
+              <Text style={pdfTypography.title}>Note</Text>
+              <Text style={pdfTypography.itemDescription}>{note}</Text>
+            </View>
+          )}
+        </View>
+        <View style={{ flex: 1 }}>
+          <View
+            style={{
+              marginHorizontal: 40,
+              paddingVertical: 14,
+              borderBottom: "1px solid black",
+              ...pdfUtils.flexRowItemCenter,
+            }}
+          >
+            <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>
+              Subtotal
+            </Text>
+            <Text
+              style={{
+                ...pdfTypography.itemDescription,
+                flex: 1,
+                textAlign: "right",
+              }}
+            >
               {currencyDetails?.currencySymbol}
               {addCommasToNumber(subtotal)}
             </Text>
           </View>
           {discount && (
-            <View>
-              <Text>Discount</Text>
-              <Text>
+            <View
+              style={{
+                marginHorizontal: 40,
+                paddingVertical: 14,
+                borderBottom: "1px solid black",
+                ...pdfUtils.flexRowItemCenter,
+              }}
+            >
+              <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>
+                Discount
+              </Text>
+              <Text
+                style={{
+                  ...pdfTypography.itemDescription,
+                  flex: 1,
+                  textAlign: "right",
+                }}
+              >
                 {currencyDetails?.currencySymbol}
                 {discount ? addCommasToNumber(+discount) : ""}
               </Text>
             </View>
           )}
           {taxRate && (
-            <View>
-              <Text>Tax ({taxRate})%</Text>
-              <Text>
+            <View
+              style={{
+                marginHorizontal: 40,
+                paddingVertical: 14,
+                borderBottom: "1px solid black",
+                ...pdfUtils.flexRowItemCenter,
+              }}
+            >
+              <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>
+                Tax ({taxRate})%
+              </Text>
+              <Text
+                style={{
+                  ...pdfTypography.itemDescription,
+                  flex: 1,
+                  textAlign: "right",
+                }}
+              >
                 {currencyDetails?.currencySymbol}
                 {addCommasToNumber(+taxAmount.toFixed(2))}
               </Text>
             </View>
           )}
-          <View>
-            <View>
-              <Text>Amount</Text>
-            </View>
-            <Text>
+          <View
+            style={{
+              marginHorizontal: 40,
+              paddingVertical: 14,
+              ...pdfUtils.flexRowItemCenter,
+            }}
+          >
+            <Text style={{ ...pdfTypography.itemDescription, flex: 1 }}>
+              Amount
+            </Text>
+            <Text
+              style={{ ...pdfTypography.amount, textAlign: "right", flex: 1 }}
+            >
               {currencyDetails?.currencySymbol}
               {addCommasToNumber(totalAmount)}
             </Text>
