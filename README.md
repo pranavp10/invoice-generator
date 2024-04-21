@@ -1,10 +1,11 @@
-## Free & Open Source Invoice Generator
+## Free Invoice Generator
+This project provides a user-friendly invoice generation tool for freelancers, small businesses, and contractors. Create professional, customized invoices quickly and easily to ensure you get paid on time, every time. 
+
+## ⛰️ Preview
 
 ![806shots_so](https://github.com/pranavp10/invoice-generator/assets/49075129/403cffa1-b540-4d62-a9bd-c3c216802fe1)
 
-This project provides a user-friendly invoice generation tool for freelancers, small businesses, and contractors. Create professional, customized invoices quickly and easily to ensure you get paid on time, every time. 
-
-**Key Features:**
+## Key Features 
 
 * **Free & Open Source:** Absolutely no cost, with the freedom to customize and adapt to your specific needs.
 * **Fast & Efficient:** Generate beautiful invoices in seconds by simply filling in the blanks.
@@ -13,59 +14,40 @@ This project provides a user-friendly invoice generation tool for freelancers, s
 * **Secure Payment Links:** Streamline the payment process by sending invoices electronically with secure payment links for faster client payments.
 * **Save Time & Resources:** Eliminate the need for manual invoice creation with spreadsheets and expensive software.
 
-**Getting Started**
+## 🤝 Contributing
 
-### Installation
+### Technologies Used
 
-**Prerequisites:**
+- **Multimedia Framework:** [React PDF]([https://ffmpeg.org/](https://react-pdf.org/))
+- **Framework:** [Next.js](https://nextjs.org)
+- **Deployment:** [Coolify](https://coolify.io)
+- **Styling:** [Tailwind CSS](http://tailwindcss.com)
+- **Analytics:** [Plausible](https://plausible.pranavp.xyz/videocompress.prolab.sh)
 
-* (Specify any required dependencies, e.g., Python version, libraries)
+### Running Locally
 
-**Instructions:**
+Ensure that you have Bun installed.
 
-(Provide clear instructions for installation depending on your chosen implementation, e.g., downloading code, setting up environment, running commands)
+```bash
+git clone https://github.com/pranavp10/invoice-generator.git
+cd video-compress
+bun install
+bun run dev
+```
 
-### Usage
+Create `.env.local` file similar to `.env.example`.
 
-**Basic Workflow:**
+### Deployment
 
-- Explain the general steps for creating invoices (e.g., entering client information, adding items, customizing template).
+The Invoice generator is deployed using [Coolify](https://coolify.io) self hosted. Automatic deployments are triggered when changes are pushed to the main branch.
 
-**Command Line (if applicable):**
+[Live Invoice Generator Link](https://invoice-generaror.prolab.sh/)
 
-- If your invoice generator is command-line based, provide detailed usage instructions with examples of commands and options.
+### License
 
-**GUI (if applicable):**
+You are free to use this code as inspiration. Please do not copy it directly. Crediting the author is appreciated. Please remove all personal information (images, etc.)
 
-- If there's a graphical user interface, explain how to navigate and use the application's features.
-
-### Customization
-
-**Template Editing (if applicable):**
-
-- Describe how to modify and personalize the provided templates (e.g., changing colors, logos, fonts).
-
-**Advanced Customization (if applicable):**
-
-- Outline any advanced customization options available for experienced users (e.g., adding custom fields, modifying functionality).
-
-**Contributing**
-
-We welcome contributions from the open-source community! To get involved:
-
-1. Fork the repository: Create a copy of the project on your GitHub account.
-2. Make changes: Implement your desired improvements or bug fixes.
-3. Pull requests: Submit your changes for review and potential inclusion in the main project.
-
-**License**
-
-This project is licensed under the [License Name] ([link to license text]).
-
-**Support**
+### Support
 
 * **Bug Reports:** To report bugs, create an issue on the project's GitHub repository.
 * **Feature Requests:** Feel free to suggest new features by creating an issue on GitHub.
-
-**Additional Notes**
-
-(Include any relevant information, e.g., known limitations, upcoming features, contact details for project maintainers)
