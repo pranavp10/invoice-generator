@@ -49,7 +49,7 @@ interface PaymentDetails {
   routingCode?: string | null;
   swiftCode?: string | null;
   ifscCode?: string | null;
-  currencyType?: string;
+  currency?: string;
 }
 
 type InvoiceData = PaymentDetails &

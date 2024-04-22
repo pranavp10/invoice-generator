@@ -113,7 +113,7 @@ const CurrencyInput = () => {
           </div>
         );
       }}
-      name={"currency"}
+      name="currency"
       defaultValue={getInitialValue("currency", "INR")}
     />
   );
