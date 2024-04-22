@@ -10,10 +10,11 @@ export const PaymentDetailsPdf: React.FC<PaymentDetails> = ({
   routingCode,
   swiftCode,
   ifscCode,
-  currencyType = "INR",
+  currency = "INR",
 }) => {
   const currencyDetails = currencyList.find(
-    (currency) => currency.value.toLowerCase() === currencyType.toLowerCase()
+    (currencyDetail) =>
+      currencyDetail.value.toLowerCase() === currency.toLowerCase()
   )?.details;
 
   return (
