@@ -11,7 +11,7 @@ type StepButtonProps = {
 const StepButton = ({ isPrevious, title, step }: StepButtonProps) => (
   <Controller
     render={({ field: { onChange } }) => (
-      <>
+      <div className="mt-3">
         {isPrevious ? (
           <button
             className="flex-1  hover:bg-neutral-100 rounded-md p-3"
@@ -63,7 +63,7 @@ const StepButton = ({ isPrevious, title, step }: StepButtonProps) => (
             <p className="font-medium text-right">{title}</p>
           </button>
         )}
-      </>
+      </div>
     )}
     name="step"
     defaultValue={getInitialValue("step") ?? "1"}
