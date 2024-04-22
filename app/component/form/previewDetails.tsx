@@ -20,44 +20,46 @@ export const PreviewDetails = ({
   invoiceTerms: InvoiceTerms;
   onClick?: (step: string) => void;
 }) => (
-  <div className="max-w-[595px] w-full h-[842px] bg-white shadow-lg rounded-2xl border border-dashed justify-center items-center">
-    <InvoiceTermsPreview {...invoiceTerms} onClick={onClick} />
-    <div className="border-b  grid grid-cols-2 justify-between border-dashed">
-      <div
-        className="py-4 px-10 border-r border-dashed cursor-pointer relative group"
-        onClick={() => onClick && onClick("1")}
-      >
-        {!!onClick && (
-          <>
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-[135deg] group-hover:block hidden absolute top-0 left-0" />
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-[135deg] group-hover:block hidden absolute top-0 right-0" />
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-45 group-hover:block hidden absolute bottom-0 left-0" />
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-45 group-hover:block hidden absolute bottom-0 right-0 " />
-          </>
-        )}
-        <YourDetailsPreview {...yourDetails} />
+  <div className="overflow-x-auto">
+    <div className="min-w-[595px] h-[842px] bg-white shadow-lg rounded-2xl border border-dashed justify-center items-center">
+      <InvoiceTermsPreview {...invoiceTerms} onClick={onClick} />
+      <div className="border-b  grid grid-cols-2 justify-between border-dashed">
+        <div
+          className="py-4 px-10 border-r border-dashed cursor-pointer relative group"
+          onClick={() => onClick && onClick("1")}
+        >
+          {!!onClick && (
+            <>
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-[135deg] group-hover:block hidden absolute top-0 left-0" />
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-[135deg] group-hover:block hidden absolute top-0 right-0" />
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-45 group-hover:block hidden absolute bottom-0 left-0" />
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-45 group-hover:block hidden absolute bottom-0 right-0 " />
+            </>
+          )}
+          <YourDetailsPreview {...yourDetails} />
+        </div>
+        <div
+          className="py-4 px-10 border-dashed cursor-pointer relative group"
+          onClick={() => onClick && onClick("2")}
+        >
+          {!!onClick && (
+            <>
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-[135deg] group-hover:block hidden absolute top-0 left-0" />
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-[135deg] group-hover:block hidden absolute top-0 right-0" />
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-45 group-hover:block hidden absolute bottom-0 left-0" />
+              <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-45 group-hover:block hidden absolute bottom-0 right-0 " />
+            </>
+          )}
+          <CompanyDetailsPreview {...companyDetails} />
+        </div>
       </div>
-      <div
-        className="py-4 px-10 border-dashed cursor-pointer relative group"
-        onClick={() => onClick && onClick("2")}
-      >
-        {!!onClick && (
-          <>
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-[135deg] group-hover:block hidden absolute top-0 left-0" />
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-[135deg] group-hover:block hidden absolute top-0 right-0" />
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 rotate-45 group-hover:block hidden absolute bottom-0 left-0" />
-            <ChevronDown className="animate-pulse w-5 h-5 text-orange-500 -rotate-45 group-hover:block hidden absolute bottom-0 right-0 " />
-          </>
-        )}
-        <CompanyDetailsPreview {...companyDetails} />
-      </div>
-    </div>
-    <div className="flex flex-col justify-between">
-      <div className="border-b justify-between border-dashed">
-        <InvoiceDetailsPreview {...invoiceDetails} onClick={onClick} />
-      </div>
-      <div className="">
-        <PaymentDetailsPreview {...paymentDetails} onClick={onClick} />
+      <div className="flex flex-col justify-between">
+        <div className="border-b justify-between border-dashed">
+          <InvoiceDetailsPreview {...invoiceDetails} onClick={onClick} />
+        </div>
+        <div className="">
+          <PaymentDetailsPreview {...paymentDetails} onClick={onClick} />
+        </div>
       </div>
     </div>
   </div>

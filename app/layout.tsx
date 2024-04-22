@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Get paid on time with our free invoice maker. Create professional invoices & get them to clients instantly.",
     url: process.env.NEXT_PUBLIC_URL,
     type: "website",
-    images: "/og-image.jpg",
+    images: "/og-image.png",
     siteName: "Invoice Generator",
   },
   twitter: {

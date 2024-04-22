@@ -20,7 +20,7 @@ export const NewInvoiceForm = () => {
     <>
       {isClient ? (
         <FormProvider {...methods}>
-          <div className="max-w-lg min-h-screen w-full h-full p-12 border-r border-dashed flex flex-col justify-between">
+          <div className="max-w-lg min-h-screen w-full h-full p-4 md:p-12 border-r border-dashed flex flex-col justify-between">
             <div>
               <div className="flex gap-2 items-center">
                 <Image
@@ -39,7 +39,7 @@ export const NewInvoiceForm = () => {
             </div>
             <FormSteps />
           </div>
-          <div className="relative min-h-screen h-full w-full flex justify-center items-center">
+          <div className="relative min-h-screen h-full w-full flex justify-center items-center p-4 md:p-0">
             <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <UserDataPreview />
           </div>
