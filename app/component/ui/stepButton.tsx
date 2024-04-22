@@ -11,7 +11,7 @@ type StepButtonProps = {
 const StepButton = ({ isPrevious, title, step }: StepButtonProps) => (
   <Controller
     render={({ field: { onChange } }) => (
-      <div className="mt-3">
+      <div className="mt-3 w-full flex">
         {isPrevious ? (
           <button
             className="flex-1  hover:bg-neutral-100 rounded-md p-3"

@@ -53,14 +53,6 @@ export const DownloadInvoiceButton = () => {
             )
           }
         </PDFDownloadLink>
-        <Button
-          onClick={() => push("/new")}
-          variant="link"
-          className="w-full h-12 text-lg"
-        >
-          <RefreshCw className="mr-2 h-4 w-4" />
-          Create a new invoice
-        </Button>
       </div>
     </div>
   );
