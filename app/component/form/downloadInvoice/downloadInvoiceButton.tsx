@@ -82,7 +82,7 @@ Font.register({
       fontWeight: "medium",
     },
     {
-      src: "/font/Geist-Semibold.ttf",
+      src: "/font/Geist-SemiBold.ttf",
       fontWeight: "semibold",
     },
     {
