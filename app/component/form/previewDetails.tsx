@@ -21,7 +21,7 @@ export const PreviewDetails = ({
   onClick?: (step: string) => void;
 }) => (
   <div className="overflow-x-auto">
-    <div className="min-w-[595px] h-[842px] bg-white shadow-lg rounded-2xl border border-dashed justify-center items-center">
+    <div className="w-[595px] h-[842px] bg-white shadow-lg rounded-2xl border border-dashed justify-center items-center">
       <InvoiceTermsPreview {...invoiceTerms} onClick={onClick} />
       <div className="border-b  grid grid-cols-2 justify-between border-dashed">
         <div

@@ -1,15 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Document, Font, PDFDownloadLink, Page } from "@react-pdf/renderer";
+import { Document, Font, Page } from "@react-pdf/renderer";
 import { Download } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { PdfDetails } from "../pdfDetails";
 import { useData } from "@/app/hooks/useData";
 import { pdfContainers } from "@/lib/pdfStyles";
+import { saveAs } from "file-saver";
+import { pdf } from "@react-pdf/renderer";
 
 export const DownloadInvoiceButton = () => {
-  const { push } = useRouter();
   const {
     companyDetails,
     invoiceDetails,
@@ -25,37 +25,28 @@ export const DownloadInvoiceButton = () => {
         <p className="text-neutral-500 text-xl pb-7">
           Please review the details carefully before downloading your invoice.
         </p>
-        <PDFDownloadLink
-          fileName="invoice.pdf"
-          document={
-            <Document>
-              <Page size="A4" style={pdfContainers.page}>
-                <PdfDetails
-                  companyDetails={companyDetails}
-                  invoiceDetails={invoiceDetails}
-                  invoiceTerms={invoiceTerms}
-                  paymentDetails={paymentDetails}
-                  yourDetails={yourDetails}
-                />
-              </Page>
-            </Document>
-          }
+        <Button
+          onClick={async () => {
+            const blob = await pdf(
+              <Document>
+                <Page size="A4" style={pdfContainers.page}>
+                  <PdfDetails
+                    companyDetails={companyDetails}
+                    invoiceDetails={invoiceDetails}
+                    invoiceTerms={invoiceTerms}
+                    paymentDetails={paymentDetails}
+                    yourDetails={yourDetails}
+                  />
+                </Page>
+              </Document>
+            ).toBlob();
+            saveAs(blob, "invoice.pdf");
+          }}
+          type="button"
+          className="w-full h-12 rounded-lg text-lg plausible-event-name=invoice-generated"
         >
-          {({ loading }) =>
-            loading ? (
-              <Button type="button" className="w-full h-12 rounded-lg text-lg">
-                <Download className="mr-2 h-6 w-6" /> Loading Invoice
-              </Button>
-            ) : (
-              <Button
-                type="button"
-                className="w-full h-12 rounded-lg text-lg plausible-event-name=invoice-generated"
-              >
-                <Download className="mr-2 h-6 w-6" /> Download Invoice
-              </Button>
-            )
-          }
-        </PDFDownloadLink>
+          <Download className="mr-2 h-6 w-6" /> Download Invoice
+        </Button>
       </div>
     </div>
   );
