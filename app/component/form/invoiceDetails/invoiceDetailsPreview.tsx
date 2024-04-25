@@ -78,7 +78,7 @@ export const InvoiceDetailsPreview: React.FC<
       ))}
       <div className="grid grid-cols-2">
         {note ? (
-          <div className="pt-6">
+          <div className="pt-6 pb-4">
             <p className="flex truncate text-xs font-medium text-neutral-400 pb-1 px-10">
               Note
             </p>
