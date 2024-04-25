@@ -82,7 +82,9 @@ export const InvoiceDetailsPreview: React.FC<
             <p className="flex truncate text-xs font-medium text-neutral-400 pb-1 px-10">
               Note
             </p>
-            <p className="text-xs font-medium text-neutral-400 px-10">{note}</p>
+            <p className="text-xs font-medium text-neutral-400 px-10 break-words">
+              {note}
+            </p>
           </div>
         ) : (
           <div />
