@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import {
@@ -71,6 +72,20 @@ const Home = () => {
           </div>
         </div>
         <div className="mb-10">
+          <div className="mx-auto flex justify-center items-center mb-6">
+            <a
+              href="https://www.producthunt.com/posts/invoice-generator-9bce3e1b-dab2-4a7a-ba7e-e315be868119?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-invoice-generator-9bce3e1b-dab2-4a7a-ba7e-e315be868119"
+              target="_blank"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=453378&theme=light"
+                alt="Invoice Generator - Get paid faster with free invoice generator | Product Hunt"
+                style={{ width: 250, height: 54 }}
+                width={250}
+                height={54}
+              />
+            </a>
+          </div>
           <DemoPreview />
         </div>
         <p className="font-medium text-xl md:text-3xl border-t border-gray-300 border-b border-dashed md:py-6 py-3 px-7 text-neutral-700 text-center">
