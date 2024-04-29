@@ -97,7 +97,7 @@ const Home = () => {
                   <span className="text-xs">Trusted by</span>
                 </div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-pink-400">
-                  138
+                  200
                 </span>
                 <span className="text-xs">users</span>
               </div>
@@ -107,7 +107,7 @@ const Home = () => {
                   <span className="text-xs">Download</span>
                 </div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-pink-400">
-                  190
+                  400
                 </span>
                 <span className="text-xs">Invoices</span>
               </div>
