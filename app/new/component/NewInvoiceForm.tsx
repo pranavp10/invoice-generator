@@ -13,6 +13,13 @@ export const NewInvoiceForm = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsClient(true);
+      try {
+        const step = localStorage.getItem("step");
+        if (!(step && typeof +step === "number"))
+          localStorage.setItem("step", "1");
+      } catch (e) {
+        localStorage.setItem("step", "1");
+      }
     }
   }, []);
 
