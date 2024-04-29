@@ -4,6 +4,7 @@
 import {
   BarChart4,
   CodeXml,
+  Download,
   Hourglass,
   Infinity,
   Linkedin,
@@ -12,6 +13,8 @@ import {
   Receipt,
   Rocket,
   Twitter,
+  User,
+  Users,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -85,6 +88,30 @@ const Home = () => {
               </svg>
               Github
             </a>
+          </div>
+          <div className=" group border-b  border-dashed text-balance text-center w-full font-semibold border-gray-300 ">
+            <div className="grid grid-cols-2 px-4 relative py-6 text-3xl md:text-7xl max-w-lg mx-auto">
+              <div className="flex flex-col border-r border-dashed border-gray-300">
+                <div className="flex justify-center items-center gap-2">
+                  <Users className="w-4 h-4" />
+                  <span className="text-xs">Trusted by</span>
+                </div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-pink-400">
+                  138
+                </span>
+                <span className="text-xs">users</span>
+              </div>
+              <div className="flex flex-col">
+                <div className="flex justify-center items-center gap-2">
+                  <Download className="w-4 h-4" />
+                  <span className="text-xs">Download</span>
+                </div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-pink-400">
+                  190
+                </span>
+                <span className="text-xs">Invoices</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="mb-10">
