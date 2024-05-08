@@ -113,17 +113,13 @@ export const PaymentDetailsPreview: React.FC<
         {currencyDetails && (
           <div className="flex gap-2 justify-between items-center w-full">
             <div className="flex gap-3 items-center">
-              <div
-                style={{ background: currencyDetails.currencyColor }}
-                className="rounded-full w-7 h-7 text-sm flex justify-center items-center text-white text-center flex-shrink-0"
-              >
-                {currencyDetails.currencySymbol}
-              </div>
+              <currencyDetails.icon className="w-8 h-8 rounded-full" />
               <div>
                 <p className="font-medium text-sm">
                   {currencyDetails.currencyName}
                 </p>
                 <p className="text-xxs text-neutral-400">
+                  {currencyDetails.currencySymbol}{" "}
                   {currencyDetails.currencyShortForm}
                 </p>
               </div>

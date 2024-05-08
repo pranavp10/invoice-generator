@@ -14,7 +14,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { currencyList } from "@/lib/currency";
-import { BadgeCheck } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { Controller } from "react-hook-form";
 import { getInitialValue } from "@/lib/getInitialValue";
@@ -37,14 +37,11 @@ const CurrencyInput = () => {
                   <label className="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap">
                     Currency
                   </label>
-                  <div className="flex gap-2 bg-neutral-100 text-sm px-2 rounded-full py-1">
-                    <div
-                      style={{ background: currencyDetails?.currencyColor }}
-                      className="rounded-full w-5 h-5 text-white"
-                    >
-                      {currencyDetails?.currencySymbol}
-                    </div>
-                    <p className="font-semibold">
+                  <div className="flex gap-1.5 bg-neutral-100 text-sm pl-2 pr-2.5 rounded-full py-0.5 items-center">
+                    {currencyDetails && (
+                      <currencyDetails.icon className="w-4 h-4 rounded-full" />
+                    )}
+                    <p className="font-medium text-sm">
                       {currencyDetails?.currencyShortForm}
                     </p>
                   </div>
@@ -73,14 +70,7 @@ const CurrencyInput = () => {
                       >
                         <div className="flex gap-2 justify-between items-center w-full">
                           <div className="flex gap-2 items-center">
-                            <div
-                              style={{
-                                background: currency.details.currencyColor,
-                              }}
-                              className="rounded-full w-6 h-6 flex justify-center items-center text-white text-center"
-                            >
-                              {currency.details.currencySymbol}
-                            </div>
+                            <currency.details.icon className="w-6 h-6 rounded-full border" />
                             <p className="font-medium">
                               {currency.details.currencyName}
                             </p>
@@ -88,7 +78,7 @@ const CurrencyInput = () => {
                               {currency.details.currencyShortForm}
                             </p>
                           </div>
-                          <BadgeCheck
+                          <CheckCircle2
                             className={cn(
                               "h-6 w-6 rounded-full",
                               value.toLowerCase() ===

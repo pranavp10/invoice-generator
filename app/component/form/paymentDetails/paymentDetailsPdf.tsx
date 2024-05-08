@@ -1,9 +1,14 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import { Text, View } from "@react-pdf/renderer";
+import { Image, Text, View } from "@react-pdf/renderer";
 import { currencyList } from "@/lib/currency";
 import { pdfTypography, pdfUtils } from "@/lib/pdfStyles";
 
-export const PaymentDetailsPdf: React.FC<PaymentDetails> = ({
+interface PaymentDetailsPdfProps extends PaymentDetails {
+  countryImageUrl: string;
+}
+
+export const PaymentDetailsPdf: React.FC<PaymentDetailsPdfProps> = ({
   bankName,
   accountNumber,
   accountName,
@@ -11,6 +16,7 @@ export const PaymentDetailsPdf: React.FC<PaymentDetails> = ({
   swiftCode,
   ifscCode,
   currency = "INR",
+  countryImageUrl,
 }) => {
   const currencyDetails = currencyList.find(
     (currencyDetail) =>
@@ -128,26 +134,23 @@ export const PaymentDetailsPdf: React.FC<PaymentDetails> = ({
           Payable in
         </Text>
         {currencyDetails && (
-          <View style={{ ...pdfUtils.flexRowItemCenter, gap: 16 }}>
-            <View
+          <View style={{ ...pdfUtils.flexRowItemCenter, gap: 8 }}>
+            <Image
+              src={countryImageUrl}
               style={{
                 width: 30,
                 height: 30,
-                backgroundColor: currencyDetails.currencyColor,
+                flexShrink: 0,
                 borderRadius: "100%",
-                ...pdfUtils.flexRowItemCenter,
-                justifyContent: "center",
+                objectFit: "cover",
               }}
-            >
-              <Text style={{ ...pdfTypography.amount, color: "#ffffff" }}>
-                {currencyDetails.currencySymbol}
-              </Text>
-            </View>
+            />
             <View>
               <Text style={{ fontSize: 14, fontWeight: "medium" }}>
                 {currencyDetails.currencyName}
               </Text>
               <Text style={pdfTypography.title}>
+                {currencyDetails.currencySymbol}{" "}
                 {currencyDetails.currencyShortForm}
               </Text>
             </View>
