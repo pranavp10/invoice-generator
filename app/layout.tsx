@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
+import Script from "next/script";
 
 export const viewport: Viewport = {
   themeColor: "#f97316",
@@ -84,6 +85,7 @@ export default function RootLayout({
           data-domain="invoice-generator.prolab.sh"
           src="https://plausible.prolab.sh/js/script.tagged-events.js"
         ></script>
+        <Script src="/chatwoot.js" />
       </head>
       <body className={`${GeistSans.className}`}>{children}</body>
     </html>
