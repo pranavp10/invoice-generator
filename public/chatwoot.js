@@ -1,3 +1,8 @@
+window.chatwootSettings = {
+  position: "right",
+  type: "expanded_bubble",
+  launcherTitle: "Chat with me now",
+};
 (function (d, t) {
   const BASE_URL = "https://chatwoot.prolab.sh";
   var g = d.createElement(t),
