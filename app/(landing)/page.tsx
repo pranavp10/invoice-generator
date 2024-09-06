@@ -229,11 +229,6 @@ const Home = () => {
               <Twitter />
             </a>
           </div>
-          <div className="border flex justify-center items-center w-10 h-10 border-dashed rounded-lg text-2xl border-gray-300">
-            <Link href="/analytics">
-              <BarChart4 />
-            </Link>
-          </div>
         </div>
       </div>
     </div>
