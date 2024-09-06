@@ -2,8 +2,6 @@
 
 <a href="https://www.producthunt.com/posts/invoice-generator-9bce3e1b-dab2-4a7a-ba7e-e315be868119?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-invoice&#0045;generator&#0045;9bce3e1b&#0045;dab2&#0045;4a7a&#0045;ba7e&#0045;e315be868119" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=453378&theme=light&period=daily" alt="Invoice&#0032;Generator - Get&#0032;paid&#0032;faster&#0032;with&#0032;free&#0032;invoice&#0032;generator | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
-
-
 This project provides a user-friendly invoice generation tool for freelancers, small businesses, and contractors. Create professional, customized invoices quickly and easily to ensure you get paid on time, every time.
 
 ## ⛰️ Preview
@@ -25,7 +23,6 @@ This project provides a user-friendly invoice generation tool for freelancers, s
 - **Framework:** [Next.js](https://nextjs.org)
 - **Deployment:** [Coolify](https://coolify.io)
 - **Styling:** [Tailwind CSS](http://tailwindcss.com)
-- **Analytics:** [Plausible](https://invoice-generator.prolabp.sh/analytics)
 
 ### Running Locally
 
@@ -39,10 +36,6 @@ bun run dev
 ```
 
 Create `.env.local` file similar to `.env.example`.
-
-### Deployment
-
-The Invoice generator is deployed using [Coolify](https://coolify.io) self hosted. Automatic deployments are triggered when changes are pushed to the main branch.
 
 [Live Invoice Generator Link](https://invoice-generator.prolab.sh/)
 

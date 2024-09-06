@@ -87,7 +87,7 @@ export const DownloadInvoiceButton = () => {
             }
           }}
           type="button"
-          className="w-full h-12 rounded-lg text-lg plausible-event-name=invoice-generated"
+          className="w-full h-12 rounded-lg text-lg"
         >
           {status === "not-downloaded" && (
             <>

@@ -75,17 +75,6 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f97316" />
         <meta name="msapplication-TileColor" content="#f97316" />
         <meta name="theme-color" content="#f97316" />
-        <script
-          defer
-          data-domain="invoice-generator.prolab.sh"
-          src="https://plausible.prolab.sh/js/script.js"
-        ></script>
-        <script
-          defer
-          data-domain="invoice-generator.prolab.sh"
-          src="https://plausible.prolab.sh/js/script.tagged-events.js"
-        ></script>
-        <Script src="/chatwoot.js" />
       </head>
       <body className={`${GeistSans.className}`}>{children}</body>
     </html>
