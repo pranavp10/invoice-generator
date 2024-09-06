@@ -21,7 +21,6 @@ This project provides a user-friendly invoice generation tool for freelancers, s
 
 - **PDF Generator:** [React PDF](https://react-pdf.org/)
 - **Framework:** [Next.js](https://nextjs.org)
-- **Deployment:** [Coolify](https://coolify.io)
 - **Styling:** [Tailwind CSS](http://tailwindcss.com)
 
 ### Running Locally
