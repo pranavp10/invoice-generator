@@ -39,6 +39,7 @@ const defaultValue = {
     bankName: "Axis Bank",
     accountNumber: "1234567890",
     accountName: "PRANAV",
+    branchCode: "123456",
     routingCode: "123456",
     swiftCode: "AXISINBB1234",
     ifscCode: "UTIB0000000",
