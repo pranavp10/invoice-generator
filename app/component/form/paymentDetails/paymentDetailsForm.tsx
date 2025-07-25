@@ -25,9 +25,9 @@ export const PaymentDetailsForm = () => (
       variableName="accountName"
     />
     <CustomTextInput
-      label="Branch code"
+      label="Branch"
       placeholder="123456"
-      variableName="branchCode"
+      variableName="branch"
     />
     <CustomTextInput
       label="IFSC code"

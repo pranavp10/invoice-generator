@@ -7,7 +7,7 @@ export const PaymentDetailsPreview: React.FC<
   bankName,
   accountNumber,
   accountName,
-  branchCode,
+  branch,
   routingCode,
   swiftCode,
   ifscCode,
@@ -85,13 +85,13 @@ export const PaymentDetailsPreview: React.FC<
                 <div className="rounded-[3.5px] bg-neutral-100 h-4 w-full animate-pulse" />
               )}
             </div>
-            {branchCode && (
+            {branch && (
               <div className="mb-2 grid grid-cols-2 items-center">
                 <p className="truncate text-xs font-medium text-gray-500">
-                  Branch Code
+                  Branch
                 </p>
                 <p className="flex truncate text-xs font-medium text-gray-600">
-                  {branchCode}
+                  {branch}
                 </p>
               </div>
             )}
