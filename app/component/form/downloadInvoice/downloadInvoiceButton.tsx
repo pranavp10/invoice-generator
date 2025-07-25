@@ -61,6 +61,7 @@ export const DownloadInvoiceButton = () => {
               );
               const svgFlag = await data.text();
               const countryImageUrl = await svgToDataUri(svgFlag);
+              console.log({ paymentDetails });
               if (countryImageUrl) {
                 const blob = await pdf(
                   <Document>

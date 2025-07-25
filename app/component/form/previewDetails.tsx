@@ -57,9 +57,11 @@ export const PreviewDetails = ({
         <div className="border-b justify-between border-dashed">
           <InvoiceDetailsPreview {...invoiceDetails} onClick={onClick} />
         </div>
-        <div className="">
-          <PaymentDetailsPreview {...paymentDetails} onClick={onClick} />
-        </div>
+        {!paymentDetails.disablePaymentDetails && (
+          <div className="">
+            <PaymentDetailsPreview {...paymentDetails} onClick={onClick} />
+          </div>
+        )}
       </div>
     </div>
   </div>

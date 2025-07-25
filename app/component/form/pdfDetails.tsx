@@ -38,12 +38,14 @@ export const PdfDetails = ({
       <View style={pdfUtils.borderBottom}>
         <InvoiceDetailsPdf {...invoiceDetails} />
       </View>
-      <View>
-        <PaymentDetailsPdf
-          {...paymentDetails}
-          countryImageUrl={countryImageUrl}
-        />
-      </View>
+      {!paymentDetails.disablePaymentDetails && (
+        <View>
+          <PaymentDetailsPdf
+            {...paymentDetails}
+            countryImageUrl={countryImageUrl}
+          />
+        </View>
+      )}
     </View>
   </View>
 );

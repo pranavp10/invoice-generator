@@ -1,9 +1,14 @@
 import CustomTextInput from "@/app/component/ui/customTextInput";
 import CustomNumberInput from "@/app/component/ui/customNumberInput";
+import SwitchInput from "@/app/component/ui/switchInput";
 
 export const PaymentDetailsForm = () => (
   <div className="pt-24">
     <p className="text-2xl font-semibold pb-3">Payment Details</p>
+    <SwitchInput
+      label="Remove payment details"
+      variableName="disablePaymentDetails"
+    />
     <CustomTextInput
       label="Bank name"
       placeholder="HSBC"
@@ -18,6 +23,11 @@ export const PaymentDetailsForm = () => (
       label="Account Name"
       placeholder="Pranav"
       variableName="accountName"
+    />
+    <CustomTextInput
+      label="Branch"
+      placeholder="123456"
+      variableName="branch"
     />
     <CustomTextInput
       label="IFSC code"

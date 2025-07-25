@@ -43,7 +43,9 @@ interface InvoiceTerms {
 }
 
 interface PaymentDetails {
+  disablePaymentDetails?: boolean;
   bankName?: string | null;
+  branch?: string | null;
   accountNumber?: string | null;
   accountName?: string | null;
   routingCode?: string | null;
