@@ -1,5 +1,6 @@
 import {
   US,
+  PK,
   IN,
   EU,
   JP,
@@ -29,6 +30,18 @@ export const currencyList: {
     iconName: string;
   };
 }[] = [
+  {
+    value: "PKR",
+    label: "PKR",
+    details: {
+      country: "Pakistan",
+      currencySymbol: "Rs",
+      currencyName: "Pakistani Rupees",
+      currencyShortForm: "PKR",
+      icon: PK,
+      iconName: "PK",
+    },
+  },
   {
     value: "INR",
     label: "INR",
