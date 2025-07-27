@@ -37,7 +37,7 @@ export const useData = () => {
   const issueDate = useGetValue("issueDate");
   const dueDate = useGetValue("dueDate");
 
-  const currency = useGetValue("currency") || "INR";
+  const currency = useGetValue("currency") || "PKR";
 
   const invoiceTerms = {
     invoiceNumber,
