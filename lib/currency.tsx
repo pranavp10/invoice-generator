@@ -15,6 +15,7 @@ import {
   GB,
   FlagComponent,
   ID,
+  NG,
 } from "country-flag-icons/react/1x1";
 
 export const currencyList: {
@@ -207,6 +208,18 @@ export const currencyList: {
       currencyShortForm: "IDR",
       icon: ID,
       iconName: "ID",
+    },
+  },
+  {
+    value: "NGN",
+    label: "NGN",
+    details: {
+      country: "Nigeria",
+      currencySymbol: "\u20A6",
+      currencyName: "Nigerian Naira",
+      currencyShortForm: "NGN",
+      icon: NG,
+      iconName: "NG",
     },
   },
 ];
