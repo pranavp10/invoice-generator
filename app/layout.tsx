@@ -3,6 +3,9 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import Script from "next/script";
 
+const siteUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
+const metadataBase = new URL(siteUrl);
+
 export const viewport: Viewport = {
   themeColor: "#f97316",
   width: "device-width",
@@ -10,7 +13,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_URL!),
+  metadataBase,
   alternates: {
     canonical: "/",
     languages: {
@@ -34,7 +37,7 @@ export const metadata: Metadata = {
       "Free Invoice Generator: Create & Send Professional Invoices in Minutes",
     description:
       "Get paid on time with our free invoice maker. Create professional invoices & get them to clients instantly.",
-    url: process.env.NEXT_PUBLIC_URL,
+    url: siteUrl,
     type: "website",
     images: "/og-image.jpeg",
     siteName: "Invoice Generator",
